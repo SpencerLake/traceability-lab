@@ -25,13 +25,13 @@ app.get('/', (req,res) => {
 //     res.status(200).send()
 // })
 
-app.get('/', (req,res) => {
+app.get('/api/flop', (req,res) => {
     try {
         thisDontWork();
     } catch (error) {
-        console.error(error);
+        rollbar.error(error, 'you been getting, those wrong things')
     }
-    rollbar.info('you been getting, those wrong things')
+    res.sendStatus(409)
 })
 
 const port = process.env.PORT || 4500
