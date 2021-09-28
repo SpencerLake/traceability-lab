@@ -5,7 +5,7 @@ const app = express()
 const Rollbar = require("rollbar")
 
 const rollbar = new Rollbar({
-    accessToken: '',
+    accessToken: 'abc6df0e32c74c1aa4c6eb30aa70e996',
     captureUncaught: true,
     captureUnhandledRejections: true
 })
@@ -22,3 +22,5 @@ app.get('/', (req,res) => {
 const port = process.env.PORT || 4500
 
 app.use(rollerbar.errorHandler())
+
+app.listen(port, () => console.log(`You're up and running on: ${port}`))
