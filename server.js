@@ -11,6 +11,7 @@ const rollbar = new Rollbar({
 })
 
 app.use(express.json())
+app.use(express.static('client'))
 
 
 app.get('/', (req,res) => {
@@ -18,6 +19,19 @@ app.get('/', (req,res) => {
     rollbar.info("Html was gotten successfully")
 })
 
+// app.get('/api/noyes', (req,res) => {
+    
+    
+//     res.status(200).send()
+// })
+
+app.get('/api/test', (req,res) => {
+    try {
+        thisDontWork();
+    } catch (error) {
+        console.error(error);
+    }
+})
 
 const port = process.env.PORT || 4500
 
