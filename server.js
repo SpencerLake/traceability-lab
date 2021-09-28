@@ -21,6 +21,6 @@ app.get('/', (req,res) => {
 
 const port = process.env.PORT || 4500
 
-app.use(rollerbar.errorHandler())
+app.use(rollbar.errorHandler())
 
 app.listen(port, () => console.log(`You're up and running on: ${port}`))
