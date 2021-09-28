@@ -31,6 +31,7 @@ app.get('/api/test', (req,res) => {
     } catch (error) {
         console.error(error);
     }
+    rollbar.info('you been getting, those wrong things')
 })
 
 const port = process.env.PORT || 4500
