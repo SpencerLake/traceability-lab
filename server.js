@@ -29,7 +29,7 @@ app.get('/api/flop', (req,res) => {
     try {
         thisDontWork();
     } catch (error) {
-        rollbar.error(error, 'you been getting, those wrong things')
+        rollbar.error('you been getting, those wrong things', error)
     }
     res.sendStatus(409)
 })
